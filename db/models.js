@@ -9,7 +9,11 @@ const userSchema = mongoose.Schema({
     username:{type:String,require:true},
     password:{type:String,require:true},
     type:{type:String,require:true},
-    header:{type:String}
+    header:{type:String},
+    post:{type:String},
+    info:{type:String},
+    company:{type:String},
+    salary:{type:String}
 })
 const userM = mongoose.model("user",userSchema)
 

@@ -6,7 +6,7 @@ var userM = require('../db/models').user
 /* GET home page. */
 router.post('/', function(req, res, next) { 
   let { username,password,type } = req.body
-
+  console.log("a")
   userM.findOne({username},(err,doc)  =>{
   console.log("doc")
     if(doc){
@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
       }).save((err,user)=>{
         const data =  { username,type,_id:user._id} 
       res.cookie("userid",user._id,{maxAge:1000*60*60*24*7})
-
+        console.log("reg",data)
         res.send({
           code:0,
           data:{

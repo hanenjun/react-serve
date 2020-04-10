@@ -10,6 +10,8 @@ var update = require('./routes/update.js')
 var userList = require('./routes/userList.js')
 var login = require('./routes/login')
 var user = require('./routes/user')
+var msglist = require('./routes/msglist')
+var readmsg = require('./routes/readmsg')
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 //parse application/json
@@ -29,6 +31,9 @@ app.use('/login', login);
 app.use('/update', update);
 app.use('/user', user);
 app.use('/userlist',userList)
+
+app.use('/msglist',msglist)
+app.use('/readmsg',readmsg)
 
 
 // catch 404 and forward to error handler

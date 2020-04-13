@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
             userDocs.forEach(doc=>{
                 users[doc._id] = {username:doc.username,header:doc.header}
             })
-            chat.find({'$or':[{from:userid},{to:userid}]},{password:0},function(err,chatDocs){
-                res.send({code:0,data:{users,chatDocs}})
+            chat.find({'$or':[{from:userid},{to:userid}]},{password:0},function(err,chatMsgs){
+                res.send({code:0,data:{users,chatMsgs}})
             })
         })
     }else{

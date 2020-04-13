@@ -24,8 +24,8 @@ const chatSchema = mongoose.Schema({
     to:{type:String,required:true},
     chat_id:{type:String,required:true},
     content:{type:String,required:true},
-    read:{type:Boolean,required:false},
-    create_tim:{type:Number}
+    read:{type:Boolean,default:false},
+    create_time:{type:Number}
 })
 
 const ChatModel = mongoose.model('chat',chatSchema)
